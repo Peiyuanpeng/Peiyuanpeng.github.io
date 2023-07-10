@@ -583,32 +583,33 @@
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
+<script src="https://priesttomb.github.io/js/md5.min.js"></script>
+
+<script type="text/javascript">
+
+    new Gitalk({
+
         clientID: '8cef5b13ae38d0c41b23',
+
         clientSecret: '2d3fe69c3cb461cca0dad5b68ccb394e3a6fe135',
-        repo: 'common',
+
+        repo: 'Peiyuanpeng.github.io',
+
         owner: 'Peiyuanpeng',
-        admin: "Peiyuanpeng",
-        id: '2023-07-09T16-37-50',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
 
-    gitalk.render('gitalk-container');
+        admin: 'Peiyuanpeng',
+
+        id: md5(location.pathname),
+
+        distractionFreeMode: true
+
+    }).render('gitalk-container')
+
 </script>
-
     
 
     
