@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>5G物理层大唐杯笔记 | 北邮人Pei自建博客</title><meta name="author" content="PP"><meta name="copyright" content="PP"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1、物理层概述物理层的位置：最底层 RRC：终端和基站之间信令交互的实体，用户面是不需要信令交互的 ​			信令相关数据，基站和终端之间信令面通了，就可以发信令之间的数据了 NAS：非接入层，终端——AMF PDCD：加密和完整性保护   物理层的主要功能 传输信道的错误检测，并向高层提供指示 传输信道的FEC编码&#x2F;解码 HARQ软合并 传输信道向物理信道的映射 物理信道功率加权 物理信道的调制与">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5G物理层大唐杯笔记">
+<meta property="og:url" content="http://testepyp.top/2023/07/10/5G%E7%89%A9%E7%90%86%E5%A4%A7%E5%94%90%E6%9D%AF%E7%AC%94%E8%AE%B0%E5%B1%82/index.html">
+<meta property="og:site_name" content="北邮人Pei自建博客">
+<meta property="og:description" content="1、物理层概述物理层的位置：最底层 RRC：终端和基站之间信令交互的实体，用户面是不需要信令交互的 ​			信令相关数据，基站和终端之间信令面通了，就可以发信令之间的数据了 NAS：非接入层，终端——AMF PDCD：加密和完整性保护   物理层的主要功能 传输信道的错误检测，并向高层提供指示 传输信道的FEC编码&#x2F;解码 HARQ软合并 传输信道向物理信道的映射 物理信道功率加权 物理信道的调制与">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img0.baidu.com/it/u=789232622,2333823016&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500">
+<meta property="article:published_time" content="2023-07-10T14:14:05.588Z">
+<meta property="article:modified_time" content="2023-07-14T08:18:15.208Z">
+<meta property="article:author" content="PP">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img0.baidu.com/it/u=789232622,2333823016&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://testepyp.top/2023/07/10/5G%E7%89%A9%E7%90%86%E5%A4%A7%E5%94%90%E6%9D%AF%E7%AC%94%E8%AE%B0%E5%B1%82/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"YEQLOVY56P","apiKey":"56552ef53c2f32b9023d73638c558fd3","indexName":"hexo","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '5G物理层大唐杯笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-14 16:18:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img2.baidu.com/it/u=192295702,3670565471&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=400&amp;h=400" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500')"><nav id="nav"><span id="blog-info"><a href="/" title="北邮人Pei自建博客"><span class="site-name">北邮人Pei自建博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">5G物理层大唐杯笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-10T14:14:05.588Z" title="发表于 2023-07-10 22:14:05">2023-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-14T08:18:15.208Z" title="更新于 2023-07-14 16:18:15">2023-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/5G/">5G</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="5G物理层大唐杯笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="1、物理层概述"><a href="#1、物理层概述" class="headerlink" title="1、物理层概述"></a>1、物理层概述</h3><p><strong>物理层的位置</strong>：最底层</p>
+<p>RRC：终端和基站之间信令交互的实体，用户面是不需要信令交互的</p>
+<p>​			信令相关数据，基站和终端之间信令面通了，就可以发信令之间的数据了</p>
+<p>NAS：非接入层，终端——AMF</p>
+<p>PDCD：加密和完整性保护</p>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307102201054.png" alt="控制面协议栈"></p>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307102203605.png" alt="用户面协议栈"></p>
+<h4 id="物理层的主要功能"><a href="#物理层的主要功能" class="headerlink" title="物理层的主要功能"></a>物理层的主要功能</h4><ul>
+<li>传输信道的错误检测，并向高层提供指示</li>
+<li>传输信道的FEC编码/解码</li>
+<li>HARQ软合并</li>
+<li>传输信道向物理信道的映射</li>
+<li>物理信道功率加权</li>
+<li>物理信道的调制与解调</li>
+<li>频率与时间同步</li>
+<li>无线特征测量，并向高层提供指示</li>
+<li>MIMO天线处理</li>
+<li>物理射频处理（射频相关范围）</li>
+</ul>
+<h4 id="物理资源"><a href="#物理资源" class="headerlink" title="物理资源"></a>物理资源</h4><ul>
+<li><p>NR基本时间单位：Tc</p>
+<p>Tc = 1/(△fmax*Nf)</p>
+<p>△fmax = 480 * 10^3</p>
+<p>Nf = 4096</p>
+<p><strong>==&gt;</strong> Tc =5.0862 * 10^-10 s</p>
+</li>
+<li><p>无线帧：10ms</p>
+</li>
+<li><p>子帧：1ms</p>
+</li>
+<li><p>时隙：μ越大，一个子帧中时隙就越多</p>
+</li>
+<li><p>OFDM符号：一个时隙是14个符号，时隙数越多，符号数越多，符号长度越短</p>
+</li>
+<li><p>天线端口：用于区分资源在空间上的差别</p>
+</li>
+<li><p>子载波</p>
+</li>
+</ul>
+<h4 id="天线端口"><a href="#天线端口" class="headerlink" title="天线端口"></a>天线端口</h4><p>进行信道估计和分辨的端口数，每一个天线端口对应一个物理资源单元。</p>
+<p>属于逻辑端口，与物理信道/信号之间存在着严格的对应关系</p>
+<p>即一个端口对于接收者来说，就是一个独立的逻辑过程，这个过程就是接收机可以利用参考信号的物理资源单元的特性进行信道估计，并进一步地实现对接收信号的解调。</p>
+<h4 id="5G信道和信号"><a href="#5G信道和信号" class="headerlink" title="5G信道和信号"></a>5G信道和信号</h4><p>从上到下可以这样分SDAP-&gt;PDCP-&gt;RLC-&gt;MAC-&gt;PHY</p>
+<p><strong>5GNR协议实体：</strong></p>
+<ul>
+<li>SDAP：服务数据适应协议</li>
+<li>PDCP：分组数据汇聚协议</li>
+<li>RLC：无线链路控制</li>
+<li>MAC：介质访问控制</li>
+<li>PHY：物理层</li>
+</ul>
+<p><strong>信道的分为：</strong></p>
+<ul>
+<li>逻辑信道：MAC层和RLC子层之间的信道</li>
+<li>传输信道：物理层与MAC层之间的信道</li>
+<li>物理信道：物理层实际传输信息的信道</li>
+</ul>
+<h4 id="5G信道映射关系"><a href="#5G信道映射关系" class="headerlink" title="5G信道映射关系"></a>5G信道映射关系</h4><p><strong>1、SSB：PSS + SSS + PBCH</strong></p>
+<p>物理层 到 MAC层需要通过BCH（广播）映射，再通过BCCH逻辑信道向上映射到RLC层。</p>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111401608.png" alt="信道映射关系"></p>
+<center><b>信道映射关系<b></b></b></center>
+
+<h4 id="5G-NR-网络中的逻辑信道"><a href="#5G-NR-网络中的逻辑信道" class="headerlink" title="5G(NR)网络中的逻辑信道"></a>5G(NR)网络中的逻辑信道</h4><p>定义：MAC子层和RLC子层之间的信道</p>
+<p>【只关注传输的信息是什么，根据传输的是控制信息还是业务信息，逻辑信道分为：控制信道和业务信道】</p>
+<table>
+<thead>
+<tr>
+<th align="left">控制信道</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">BCCH：广播系统信息</td>
+</tr>
+<tr>
+<td align="left">PCCH：用来寻呼终端的信道</td>
+</tr>
+<tr>
+<td align="left">CCCH：用于在UE和网络之间还没有建立RRC连接时，发送控制信息</td>
+</tr>
+<tr>
+<td align="left">DCCH：RRC建立之后，UE和网络之间发送一对一的专用控制信息</td>
+</tr>
+<tr>
+<td align="left"><strong>业务信道：</strong></td>
+</tr>
+<tr>
+<td align="left">DTCH：专用于一个UE的点对点用户传输的信道，上下行链路中都有</td>
+</tr>
+</tbody></table>
+<h4 id="5G-NR）网络中的传输信道"><a href="#5G-NR）网络中的传输信道" class="headerlink" title="5G(NR）网络中的传输信道"></a>5G(NR）网络中的传输信道</h4><table>
+<thead>
+<tr>
+<th>下行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>广播信道BCH：通过广播的方式传输下行控制信息</td>
+</tr>
+<tr>
+<td>下行共享信道DL-SCH：用于传输下行控制或者用户信息</td>
+</tr>
+<tr>
+<td>寻呼信道：PCH：用于传输寻呼信息</td>
+</tr>
+<tr>
+<td><strong>上行</strong></td>
+</tr>
+<tr>
+<td>上行共享信道UL-SCH：传输上行控制或者用户信息</td>
+</tr>
+<tr>
+<td>随机接入信道RACH：用于传输随机接入前导码</td>
+</tr>
+</tbody></table>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111415998.png" alt="信道示意图"></p>
+<h4 id="5G物理信道与信号概述"><a href="#5G物理信道与信号概述" class="headerlink" title="5G物理信道与信号概述"></a>5G物理信道与信号概述</h4><p>了解下行与上行的概念</p>
+<ul>
+<li><strong>Downlink</strong><ul>
+<li>Physical Channel<ul>
+<li>PBCH</li>
+<li>PDCCH</li>
+<li>PDSCH</li>
+</ul>
+</li>
+<li>Physical Signals<ul>
+<li>PSS/SSS</li>
+<li>DM-RS</li>
+<li>CSI-RS： 下行信道质量指示参考信号</li>
+<li>PT-RS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Uplink</strong><ul>
+<li>Physical Channel<ul>
+<li>PRACH：随机接入信道</li>
+<li>PUCCH</li>
+<li>PUSCH</li>
+</ul>
+</li>
+<li>Physical Signals<ul>
+<li>DM_RS：解调参考信号</li>
+<li>PT-RS： 相位跟踪参考信号</li>
+<li>SRS： 信道探测参考信号</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2、小区搜索"><a href="#2、小区搜索" class="headerlink" title="2、小区搜索"></a>2、小区搜索</h3><h4 id="搜索流程"><a href="#搜索流程" class="headerlink" title="搜索流程"></a>搜索流程</h4><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111435884.png" alt="搜索流程"></p>
+<p> 其中SSS -&gt; PBCH中需要DMRS信号</p>
+<h4 id="小区搜索-SSB"><a href="#小区搜索-SSB" class="headerlink" title="小区搜索-SSB"></a>小区搜索-SSB</h4><p><strong>定义：</strong>5GNR中，主同步信号（PSS）、辅同步信号（SSS）和PBCH共同构成一个SSB（SS/PBCH BLOCK）</p>
+<p><strong>占用情况：</strong>时域上4个OFDM，频域占用240个子载波（20个PRB）</p>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111521900.png" alt="时域"></p>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111522470.png" alt="子载波映关系"></p>
+<h4 id="小区搜索-SSB（频域位置）"><a href="#小区搜索-SSB（频域位置）" class="headerlink" title="小区搜索-SSB（频域位置）"></a>小区搜索-SSB（频域位置）</h4><p><strong>说明：</strong>SS block频域位置用SSREF（KHz）表示，对应的索引用GSCN（无量纲）来表示：</p>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111612935.png" alt="小区搜索表"></p>
+<ul>
+<li>引入了同步Raster，SS/PBCH Block按照同步Raster进行布局，区别于Channel Raster</li>
+<li>对于不同频段，SSB块支持的子载波间隔（15KHz、30KHz、120KHz、240KHz）、pattern不同（caseA、caseB、caseC、caseD、caseE）</li>
+</ul>
+<p>频域上，NR中SSB可以传输在载波的任何位置，SSB位置服从synchronization Raster；PDCCH/PDSCH载波中心服从Channel Raster，SSB的子载波位置0可以不与物理资源块RB对齐。</p>
+<p>SSB 子载波0与CRB0的偏移 = offsetToPointA（单位：RB） + KSSB<strong>（单位：子载波）</strong></p>
+<ul>
+<li>KSSB，子载波偏移：低4个bits来源于MIB，最高位（5bit）来自于PBCH编码中的</li>
+<li>OffsetToPointA：来源于SIB1</li>
+</ul>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111646480.png" alt="子载波偏移"></p>
+<h4 id="小区搜索-获取PCI"><a href="#小区搜索-获取PCI" class="headerlink" title="小区搜索-获取PCI"></a>小区搜索-获取PCI</h4><ul>
+<li>检PSS<ul>
+<li>PSS为3条长度127的伪随机序列，采用BPSK M序列</li>
+<li>中间连续的127个子载波，加上两侧8/9个SC保护间隔，共占144个子载波</li>
+<li>UE搜索到PSS后，可以获取PCI中的NID(2) ∈ {0,1,2}</li>
+</ul>
+</li>
+<li>检SSS<ul>
+<li>SSS为336条的长度127的伪随机序列，采用BPSK M序列</li>
+<li>中间连续的127个子载波，加上两侧8/9个SC作为保护间隔，共占144个子载波</li>
+<li>UE搜索到SSS后，可以获取PCI中的NID(1) 属于 {0,1,….,335}</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111646552.png" alt="PCI1"></p>
+<p><strong>备注</strong>：UE检测出PSS，就知道SSB的GSCN和同步参考频率SSREF</p>
+<h4 id="小区搜索-DM-RS-for-PBCH"><a href="#小区搜索-DM-RS-for-PBCH" class="headerlink" title="小区搜索-DM-RS for PBCH"></a>小区搜索-DM-RS for PBCH</h4><p>PBCH的DM-RS在时域上占用和PBCH相同的符号数，在频域上间隔4个子载波，初始偏移由PCI确定：</p>
+<p>可以对照这上满那个DM-RS索引位置表进行确定，可以通过表达式确定v的值即 v = NcellID mod4</p>
+<p>需要注意的是需要置零的位置不是DM-RS的索引位置，视频中的例子如下图所示：</p>
+<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202307111703655.png" alt="PCI2"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://testepyp.top">PP</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://testepyp.top/2023/07/10/5G%E7%89%A9%E7%90%86%E5%A4%A7%E5%94%90%E6%9D%AF%E7%AC%94%E8%AE%B0%E5%B1%82/">http://testepyp.top/2023/07/10/5G%E7%89%A9%E7%90%86%E5%A4%A7%E5%94%90%E6%9D%AF%E7%AC%94%E8%AE%B0%E5%B1%82/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://testepyp.top" target="_blank">北邮人Pei自建博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a></div><div class="post_share"><div class="social-share" data-image="https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/11/2023-07-11-5G-NR%E4%B8%8B%E8%A1%8C%E5%90%8C%E6%AD%A5/" title="2023-07-11 5G NR下行同步"><img class="cover" src="https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2023-07-11 5G NR下行同步</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/09/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="裴同学的第一篇博客"><img class="cover" src="https://img1.baidu.com/it/u=2166651258,3027312367&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=667&amp;h=500" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">裴同学的第一篇博客</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/07/11/2023-07-11-5G-NR%E4%B8%8B%E8%A1%8C%E5%90%8C%E6%AD%A5/" title="2023-07-11 5G NR下行同步"><img class="cover" src="https://img0.baidu.com/it/u=789232622,2333823016&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-11</div><div class="title">2023-07-11 5G NR下行同步</div></div></a></div><div><a href="/2023/07/12/%E4%B8%8B%E8%A1%8C%E5%90%8C%E6%AD%A5%E5%8E%9F%E7%90%86/" title="下行同步原理"><img class="cover" src="https://img0.baidu.com/it/u=789232622,2333823016&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-12</div><div class="title">下行同步原理</div></div></a></div><div><a href="/2023/07/13/NR%20SSB%20Beam%20Sweeping/" title="NR SSB Beam Sweeping translation"><img class="cover" src="https://img0.baidu.com/it/u=789232622,2333823016&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-13</div><div class="title">NR SSB Beam Sweeping translation</div></div></a></div><div><a href="/2023/07/18/NR%E5%B0%8F%E5%8C%BA%E6%90%9C%E7%B4%A2%E5%8F%8AMIB%E5%92%8CSIB1%E6%81%A2%E5%A4%8D/" title="NR小区搜索及MIB和SIB1恢复"><img class="cover" src="https://img0.baidu.com/it/u=789232622,2333823016&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-18</div><div class="title">NR小区搜索及MIB和SIB1恢复</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://img2.baidu.com/it/u=192295702,3670565471&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=400&amp;h=400" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">PP</div><div class="author-info__description">一些日常学习中的总结或日记或生活</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Peiyuanpeng" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1452070271@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这个人很懒，没什么简介！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E7%89%A9%E7%90%86%E5%B1%82%E6%A6%82%E8%BF%B0"><span class="toc-text">1、物理层概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-text">物理层的主要功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%B5%84%E6%BA%90"><span class="toc-text">物理资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A9%E7%BA%BF%E7%AB%AF%E5%8F%A3"><span class="toc-text">天线端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5G%E4%BF%A1%E9%81%93%E5%92%8C%E4%BF%A1%E5%8F%B7"><span class="toc-text">5G信道和信号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5G%E4%BF%A1%E9%81%93%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB"><span class="toc-text">5G信道映射关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5G-NR-%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%80%BB%E8%BE%91%E4%BF%A1%E9%81%93"><span class="toc-text">5G(NR)网络中的逻辑信道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5G-NR%EF%BC%89%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E4%BC%A0%E8%BE%93%E4%BF%A1%E9%81%93"><span class="toc-text">5G(NR）网络中的传输信道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5G%E7%89%A9%E7%90%86%E4%BF%A1%E9%81%93%E4%B8%8E%E4%BF%A1%E5%8F%B7%E6%A6%82%E8%BF%B0"><span class="toc-text">5G物理信道与信号概述</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%B0%8F%E5%8C%BA%E6%90%9C%E7%B4%A2"><span class="toc-text">2、小区搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%B5%81%E7%A8%8B"><span class="toc-text">搜索流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E5%8C%BA%E6%90%9C%E7%B4%A2-SSB"><span class="toc-text">小区搜索-SSB</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E5%8C%BA%E6%90%9C%E7%B4%A2-SSB%EF%BC%88%E9%A2%91%E5%9F%9F%E4%BD%8D%E7%BD%AE%EF%BC%89"><span class="toc-text">小区搜索-SSB（频域位置）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E5%8C%BA%E6%90%9C%E7%B4%A2-%E8%8E%B7%E5%8F%96PCI"><span class="toc-text">小区搜索-获取PCI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E5%8C%BA%E6%90%9C%E7%B4%A2-DM-RS-for-PBCH"><span class="toc-text">小区搜索-DM-RS for PBCH</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/18/NR%E5%B0%8F%E5%8C%BA%E6%90%9C%E7%B4%A2%E5%8F%8AMIB%E5%92%8CSIB1%E6%81%A2%E5%A4%8D/" title="NR小区搜索及MIB和SIB1恢复"><img src="https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NR小区搜索及MIB和SIB1恢复"/></a><div class="content"><a class="title" href="/2023/07/18/NR%E5%B0%8F%E5%8C%BA%E6%90%9C%E7%B4%A2%E5%8F%8AMIB%E5%92%8CSIB1%E6%81%A2%E5%A4%8D/" title="NR小区搜索及MIB和SIB1恢复">NR小区搜索及MIB和SIB1恢复</a><time datetime="2023-07-18T08:29:29.874Z" title="发表于 2023-07-18 16:29:29">2023-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/13/NR%20SSB%20Beam%20Sweeping/" title="NR SSB Beam Sweeping translation"><img src="https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NR SSB Beam Sweeping translation"/></a><div class="content"><a class="title" href="/2023/07/13/NR%20SSB%20Beam%20Sweeping/" title="NR SSB Beam Sweeping translation">NR SSB Beam Sweeping translation</a><time datetime="2023-07-13T13:30:50.485Z" title="发表于 2023-07-13 21:30:50">2023-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/12/%E4%B8%8B%E8%A1%8C%E5%90%8C%E6%AD%A5%E5%8E%9F%E7%90%86/" title="下行同步原理"><img src="https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="下行同步原理"/></a><div class="content"><a class="title" href="/2023/07/12/%E4%B8%8B%E8%A1%8C%E5%90%8C%E6%AD%A5%E5%8E%9F%E7%90%86/" title="下行同步原理">下行同步原理</a><time datetime="2023-07-12T12:36:58.251Z" title="发表于 2023-07-12 20:36:58">2023-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/11/2023-07-11-5G-NR%E4%B8%8B%E8%A1%8C%E5%90%8C%E6%AD%A5/" title="2023-07-11 5G NR下行同步"><img src="https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023-07-11 5G NR下行同步"/></a><div class="content"><a class="title" href="/2023/07/11/2023-07-11-5G-NR%E4%B8%8B%E8%A1%8C%E5%90%8C%E6%AD%A5/" title="2023-07-11 5G NR下行同步">2023-07-11 5G NR下行同步</a><time datetime="2023-07-11T11:37:29.724Z" title="发表于 2023-07-11 19:37:29">2023-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/10/5G%E7%89%A9%E7%90%86%E5%A4%A7%E5%94%90%E6%9D%AF%E7%AC%94%E8%AE%B0%E5%B1%82/" title="5G物理层大唐杯笔记"><img src="https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="5G物理层大唐杯笔记"/></a><div class="content"><a class="title" href="/2023/07/10/5G%E7%89%A9%E7%90%86%E5%A4%A7%E5%94%90%E6%9D%AF%E7%AC%94%E8%AE%B0%E5%B1%82/" title="5G物理层大唐杯笔记">5G物理层大唐杯笔记</a><time datetime="2023-07-10T14:14:05.588Z" title="发表于 2023-07-10 22:14:05">2023-07-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img0.baidu.com/it/u=789232622,2333823016&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By PP</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div></body></html>
