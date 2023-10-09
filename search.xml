@@ -4,13 +4,25 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2023/10/09/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"/>
-      <url>/2023/10/09/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/</url>
+      <title>现代通信技术2-138实验报告</title>
+      <link href="/2023/10/09/%E7%8E%B0%E4%BB%A3%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF2-138%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"/>
+      <url>/2023/10/09/%E7%8E%B0%E4%BB%A3%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF2-138%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/</url>
       
-        <content type="html"><![CDATA[<p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720442.png" alt="第一次实验记录_页面_1"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720088.png" alt="第一次实验记录_页面_2"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720932.png" alt="第一次实验记录_页面_3"><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720930.png" alt="第一次实验记录_页面_4"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720926.png" alt="第二次实验记录_页面_01"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091722539.png" alt="第二次实验记录_页面_02"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091722650.png" alt="第二次实验记录_页面_03"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725186.png" alt="第二次实验记录_页面_04"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725467.png" alt="第二次实验记录_页面_05"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725083.png" alt="第二次实验记录_页面_06"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725180.png" alt="第二次实验记录_页面_07"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725748.png"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725426.png" alt="第二次实验记录_页面_09"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726341.png" alt="第二次实验记录_页面_10"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726357.png" alt="第二次实验记录_页面_11"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726971.png" alt="第二次实验记录_页面_12"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726611.png" alt="第二次实验记录_页面_13"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726069.png" alt="第二次实验记录_页面_14"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Cisco-Packet-Tracer仿真"><a href="#Cisco-Packet-Tracer仿真" class="headerlink" title="Cisco Packet Tracer仿真"></a>Cisco Packet Tracer仿真</h2><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720442.png" alt="第一次实验记录_页面_1"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720088.png" alt="第一次实验记录_页面_2"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720932.png" alt="第一次实验记录_页面_3"><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720930.png" alt="第一次实验记录_页面_4"></p><h2 id="软交换实验"><a href="#软交换实验" class="headerlink" title="软交换实验"></a>软交换实验</h2><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091720926.png" alt="第二次实验记录_页面_01"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091722539.png" alt="第二次实验记录_页面_02"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091722650.png" alt="第二次实验记录_页面_03"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725186.png" alt="第二次实验记录_页面_04"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725467.png" alt="第二次实验记录_页面_05"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725083.png" alt="第二次实验记录_页面_06"></p><h2 id="后半部分为TD-LET"><a href="#后半部分为TD-LET" class="headerlink" title="后半部分为TD - LET"></a>后半部分为TD - LET</h2><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725180.png" alt="第二次实验记录_页面_07"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725748.png" alt="第二次实验记录_页面_08"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091725426.png" alt="第二次实验记录_页面_09"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726341.png" alt="第二次实验记录_页面_10"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726357.png" alt="第二次实验记录_页面_11"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726971.png" alt="第二次实验记录_页面_12"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726611.png" alt="第二次实验记录_页面_13"></p><p><img src="https://picture-cloud-storage-pyp.oss-cn-beijing.aliyuncs.com/img/202310091726069.png" alt="第二次实验记录_页面_14"></p>]]></content>
       
       
+      <categories>
+          
+          <category> 现代通信技术实验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+        </tags>
       
     </entry>
     
